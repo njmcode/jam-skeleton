@@ -62,6 +62,7 @@ const baseConfig = {
     modules: [
       'node_modules',
       SRC_PATH,
+      path.join(SRC_PATH, 'game'),
     ],
     alias: { phaser, pixi, p2 },
   },
