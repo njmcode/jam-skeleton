@@ -1,0 +1,19 @@
+{
+  "name": "jam-skeleton",
+  "version": "1.0.0",
+  "description": "A Phaser-based skeleton for game jam development",
+  "main": "src/game/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njmcode/jam-skeleton.git"
+  },
+  "author": "njmcode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njmcode/jam-skeleton/issues"
+  },
+  "homepage": "https://github.com/njmcode/jam-skeleton#readme"
+}
