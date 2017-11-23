@@ -3,6 +3,7 @@
 
 # Added by NJM
 .vscode
+.DS_Store
 
 ### Node ###
 # Logs
