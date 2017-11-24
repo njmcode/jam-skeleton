@@ -19,12 +19,24 @@ const baseConfig = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
         include: SRC_PATH,
         exclude: [
           /node_modules/,
           path.join(SRC_PATH, 'lib')
         ],
+        use: [{
+          loader: 'babel-loader',
+        }],
+      },
+      // Assets handled as file paths for import
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/',
+          },
+        }],
       },
       // Hoop-jumping to alllow Phaser import
       {
@@ -62,7 +74,7 @@ const baseConfig = {
     modules: [
       'node_modules',
       SRC_PATH,
-      path.join(SRC_PATH, 'game'),
+      path.resolve(SRC_PATH, 'game'),
     ],
     alias: { phaser, pixi, p2 },
   },
@@ -70,7 +82,7 @@ const baseConfig = {
   output: {
     filename: '[name].bundle.js',
     path: DIST_PATH,
-    publicPath: 'http://localhost:8080',
+    publicPath: 'http://localhost:8080/',
   },
 }
 

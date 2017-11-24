@@ -1,8 +1,11 @@
-const font1 = {
+export const Regular = {
   font: '20px sans-serif',
-  color: 'white',
+  fill: 'white',
+  align: 'left',
 }
 
-export default {
-  font1,
+export const Big = {
+  font: '40px sans-serif',
+  fill: 'white',
+  align: 'center',
 }
