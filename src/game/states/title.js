@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import { RegularStyle, TitleStyle } from 'config/fonts'
 import STRINGS from 'config/strings'
 import phaserLogoImg from 'assets/phaser-logo.png'
-import ClickableText from 'ui/clicktext'
+import ClickableText from 'ui/ClickableText'
 import { addTo } from 'helpers/gameobj'
 
 class TitleState extends Phaser.State {
