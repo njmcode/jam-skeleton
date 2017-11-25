@@ -25,8 +25,8 @@ function _getGame (inst) {
  * @author njmcode
  * @function addTo
  * @param {Phaser.State|Phaser.Game} inst - Current game or state object.
- * @param {Phaser.GameObject} ObjClass - Class of object to create.
- * @param {mixed} args - Arguments to be passed to ObjClass constructor.
+ * @param {Phaser.GameObject} ObjClass - Class of object to create (e.g. Phaser.Sprite).
+ * @param {mixed} args - Arguments to be passed to ObjClass constructor (e.g. game, x, y, etc).
  * @return {Phaser.GameObject} The created ObjClass instance.
  */
 export const addTo = (inst, ObjClass, ...args) => {
