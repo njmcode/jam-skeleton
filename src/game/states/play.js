@@ -1,4 +1,7 @@
 import Phaser from 'phaser'
+import { TitleStyle } from 'config/fonts'
+import STRINGS from 'config/strings'
+import { addTo } from 'helpers/gameobj'
 
 class PlayState extends Phaser.State {
   preload () {
@@ -6,7 +9,13 @@ class PlayState extends Phaser.State {
   }
 
   create () {
-    console.log('Play state ready')
+    const { centerX: cx, centerY: cy } = this.game.world
+
+    // Placeholder text
+    this.titleText = addTo(this, Phaser.Text,
+      cx, cy - 100,
+      STRINGS['play.placeholder'],
+      {...TitleStyle, fill: '#555'})
   }
 
   update () {

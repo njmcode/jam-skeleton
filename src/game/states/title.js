@@ -3,6 +3,7 @@ import { RegularStyle, TitleStyle } from 'config/fonts'
 import STRINGS from 'config/strings'
 import phaserLogoImg from 'assets/phaser-logo.png'
 import ClickableText from 'ui/clicktext'
+import { addTo } from 'helpers/gameobj'
 
 class TitleState extends Phaser.State {
   preload () {
@@ -10,32 +11,27 @@ class TitleState extends Phaser.State {
   }
 
   create () {
-    const { centerX, centerY } = this.game.world
+    const { centerX: cx, centerY: cy } = this.game.world
 
     // Phaser logo
-    this.bgImage = this.add.image(centerX, centerY, 'phaser-logo')
-    this.bgImage.anchor.set(0.5)
+    this.bgImage = addTo(this, Phaser.Image, cx, cy, 'phaser-logo')
     this.bgImage.alpha = 0.4
 
     // Big text
-    this.titleText = this.add.text(centerX, centerY - 100,
+    this.titleText = addTo(this, Phaser.Text, cx, cy - 100,
       STRINGS['title.mainTitle'],
       {...TitleStyle, fill: 'cyan'})
-    this.titleText.anchor.set(0.5)
 
     // Small text
-    this.bodyText = this.add.text(centerX, centerY + 100,
+    this.bodyText = addTo(this, Phaser.Text, cx, cy + 100,
       STRINGS['title.body'],
       RegularStyle)
-    this.bodyText.anchor.set(0.5)
 
     // Play button
-    this.playButton = new ClickableText(this, centerX, centerY + 200,
-      STRINGS['title.cta'],
+    this.playButton = addTo(this, ClickableText, cx, cy + 200,
+      STRINGS['title.cta'], 
       {...TitleStyle, fill: 'yellow'},
       () => this.state.start('play'))
-    this.playButton.anchor.set(0.5)
-    this.add.existing(this.playButton)
   }
 
   update () {

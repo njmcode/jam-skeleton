@@ -2,6 +2,7 @@
 
 For re-usable functions and common logic used by multiple modules, e.g.:
 
+ - factory/creation helpers for game objects
  - trig, perspective and other maths
  - pathfinding & LOS calculation
  - input handling e.g. touch/gesture, gamepad
