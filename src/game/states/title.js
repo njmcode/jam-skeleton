@@ -4,10 +4,15 @@ import STRINGS from 'config/strings'
 import phaserLogoImg from 'assets/phaser-logo.png'
 import ClickableText from 'ui/ClickableText'
 import { addTo } from 'helpers/gameobj'
+import { loadAssets } from 'helpers/loading'
 
 class TitleState extends Phaser.State {
   preload () {
-    this.load.image('phaser-logo', phaserLogoImg)
+    loadAssets(this, {
+      image: {
+        'phaser-logo': phaserLogoImg,
+      },
+    })
   }
 
   create () {

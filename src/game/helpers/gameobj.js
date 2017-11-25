@@ -4,17 +4,18 @@ import Phaser from 'phaser'
  * Return the current game instance from the given object.
  *
  * @author njmcode
- * @function _getGame
- * @private
+ * @function getGame
  * @param {Phaser.State|Phaser.GameObject} inst - Current game/state instance.
  * @returns {Phaser.Game} The current game instance.
  */
-function _getGame (inst) {
+export function getGame (inst) {
   let game
   if (inst instanceof Phaser.State) {
     game = inst.game
   } else if (inst instanceof Phaser.Game) {
     game = inst
+  } else {
+    throw new Error('getGame: must pass instance of State or Game')
   }
   return game
 }
@@ -29,8 +30,8 @@ function _getGame (inst) {
  * @param {mixed} args - Arguments to be passed to ObjClass constructor (e.g. game, x, y, etc).
  * @return {Phaser.GameObject} The created ObjClass instance.
  */
-export const addTo = (inst, ObjClass, ...args) => {
-  const newObj = new ObjClass(_getGame(inst), ...args)
+export function addTo (inst, ObjClass, ...args) {
+  const newObj = new ObjClass(getGame(inst), ...args)
   newObj.anchor.set(0.5)
   inst.add.existing(newObj)
   return newObj
