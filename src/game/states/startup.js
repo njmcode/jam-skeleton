@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 
 class StartupState extends Phaser.State {
   create () {
-    console.log('Startup complete')
+    // TODO: add debug URL state targetting
 
     this.state.start('title')
   }

@@ -18,8 +18,28 @@
       canvas {
         margin: 0 auto;
       }
+
+      #game-wrap {
+        margin: 0 auto;
+      }
+      #game-wrap span {
+        display: block;
+        margin: 20px auto;
+        animation: loadflash 0.3s infinite ease alternate;
+      }
+      @keyframes loadflash {
+        from {
+          color: #aaa;
+        }
+        to {
+          color: white;
+        }
+      }
     </style>
     <title>Jam Skeleton</title>
+    <div id="game-wrap">
+      <span>Starting up...</span>
+    </div>
   </head>
   <body>
 

@@ -1,18 +1,27 @@
 import Phaser from 'phaser'
 import { RegularStyle, TitleStyle } from 'config/fonts'
 import STRINGS from 'config/strings'
-import phaserLogoImg from 'assets/phaser-logo.png'
 import ClickableText from 'ui/ClickableText'
+import LoadProgressText from 'ui/LoadProgressText'
 import { addTo } from 'helpers/gameobj'
 import { loadAssets } from 'helpers/loading'
 
+import phaserLogoImg from 'assets/phaser-logo.png'
+
 class TitleState extends Phaser.State {
   preload () {
-    loadAssets(this, {
-      image: {
-        'phaser-logo': phaserLogoImg,
-      },
-    })
+    const { centerX: cx, centerY: cy } = this.game.world
+
+    this.prog = addTo(this, LoadProgressText, cx, cy,
+      'Loading...', { ...TitleStyle, fill: 'lightblue' })
+
+    loadAssets(this,
+      {
+        image: {
+          'phaser-logo': phaserLogoImg,
+        },
+      }
+    )
   }
 
   create () {
@@ -34,7 +43,7 @@ class TitleState extends Phaser.State {
 
     // Play button
     this.playButton = addTo(this, ClickableText, cx, cy + 200,
-      STRINGS['title.cta'], 
+      STRINGS['title.cta'],
       {...TitleStyle, fill: 'yellow'},
       () => this.state.start('play'))
   }

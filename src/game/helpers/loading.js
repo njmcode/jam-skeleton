@@ -20,7 +20,7 @@ import { getGame } from 'helpers/gameobj'
  *  },
  *  etc.
  * }
- * 
+ *
  * @author njmcode
  * @function loadAssets
  * @param {Phaser.State|Phaser.Game} inst - Game or state object
