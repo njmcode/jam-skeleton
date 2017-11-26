@@ -1,3 +1,3 @@
 # lib
 
-For modules and third-party libraries that can not be included in the project via `npm install`.
+For third-party modules and libraries that can not be included in the project via `npm install`.

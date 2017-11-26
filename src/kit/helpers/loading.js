@@ -1,4 +1,4 @@
-import { getGame } from 'helpers/gameobj'
+import { getGame } from './gameobj'
 
 /**
  * Load a manifest of assets into the current game.

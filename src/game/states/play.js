@@ -1,7 +1,8 @@
 import Phaser from 'phaser'
 import { TitleStyle } from 'config/fonts'
 import STRINGS from 'config/strings'
-import { addTo } from 'helpers/gameobj'
+
+import { addTo } from 'kit/helpers/gameobj'
 
 class PlayState extends Phaser.State {
   preload () {

@@ -1,10 +1,11 @@
 import Phaser from 'phaser'
 import { RegularStyle, TitleStyle } from 'config/fonts'
 import STRINGS from 'config/strings'
-import ClickableText from 'ui/ClickableText'
-import LoadProgressText from 'ui/LoadProgressText'
-import { addTo } from 'helpers/gameobj'
-import { loadAssets } from 'helpers/loading'
+
+import ClickableText from 'kit/ui/ClickableText'
+import LoadProgressText from 'kit/ui/LoadProgressText'
+import { addTo } from 'kit/helpers/gameobj'
+import { loadAssets } from 'kit/helpers/loading'
 
 import phaserLogoImg from 'assets/phaser-logo.png'
 
