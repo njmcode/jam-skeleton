@@ -36,3 +36,7 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
  * No `console` statements (will keep output clean over time and help debugging)
  * Require dangling comma for multiline declarations (will make adding/removing items from a collection easier)
  * No semicolons (cleaner code and less typing)
+
+## Skeleton features
+
+ * **Jump to state** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined.
