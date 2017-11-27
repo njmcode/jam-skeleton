@@ -49,9 +49,9 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
 
 ### Order of events
 
- 1. Make it *work*
- 2. Make it *fun*
- 3. Make it *polished*
+ 1. Make it **work**
+ 2. Make it **fun**
+ 3. Make it **polished**
 
 ### What matters (do these first)
 
@@ -64,7 +64,7 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
  * Minimum required in-game graphics and sound
  * Anything that imparts a sense of joy, excitement, fear etc
 
-### What doesn't matter* (do these if you have time)
+### What doesn't matter\* (do these if you have time)
 
  * Frontend aesthetics (menus, title, logos etc)
  * Complex animation
@@ -73,4 +73,5 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
  * Massive variety of content
  * Special effects
 
-* _unless integral to the core gameplay loop_
+
+\* _unless integral to the core gameplay loop_
