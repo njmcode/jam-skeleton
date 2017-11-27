@@ -39,4 +39,38 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
 
 ## Skeleton features
 
- * **Jump to state** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined.
+ * **Basic states created** - `startup`, `title` and `play` states are already in place and wired up.
+ * **Easier game object handling** - includes helper methods and factories to more easily add game objects to the state, with suitable defaults (e.g. centred anchor position).
+ * **Asset preloading tools** - contains a helper method to load a manifest of assets, and a basic UI text component to report progress.
+ * **Jump to state via URL hash** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined. _Note: this only works on initial page load; there is no HTML5 History integration and the state will not respond to hash changes once the page has loaded._
+ * **HTML page shell** - barebones styled HTML and CSS shell, with Canvas placeholder text and centred layout.
+
+## njmcode's Notes On Game Jamming
+
+### Order of events
+
+ 1. Make it *work*
+ 2. Make it *fun*
+ 3. Make it *polished*
+
+### What matters (do these first)
+
+ * Fun gameplay
+ * Core game mechanics & play loop
+ * Player controls & tactility
+ * Success/failure feedback
+ * Sense of player agency and involvement
+ * Metric of success - win screen, trackable score, levels etc
+ * Minimum required in-game graphics and sound
+ * Anything that imparts a sense of joy, excitement, fear etc
+
+### What doesn't matter* (do these if you have time)
+
+ * Frontend aesthetics (menus, title, logos etc)
+ * Complex animation
+ * Custom music (unless a music or horror-based game)
+ * User customization (options, tweaks etc)
+ * Massive variety of content
+ * Special effects
+
+* _unless integral to the core gameplay loop_
