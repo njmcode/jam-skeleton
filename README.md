@@ -27,6 +27,16 @@ A (currently Phaser-based) skeleton project for game jam entries.
  * `start` - runs the Webpack dev server, builds the app, serves it on localhost while watching for changes and live-reloading as needed.
  * `build` - performs a production build (minified etc) to the `/dist` directory.
 
+## Developing with the skeleton
+
+ * All game-related code lives in the `/src/game` directory.
+ * `/src/game/index.js` is the Webpack entrypoint of the app (it should not require editing).
+ * `/src/game/states/startup.js:preload()` is the first code executed after the game instance has been created.
+ * `Phaser` must be `import`ed before use in a module e.g. `import Phaser from 'phaser'`
+ * `/src/kit` contains helpers and UI components to assist in development; check the source for details.
+ * `import`ing a media file (image, video, audio) will get the URL from which that file is served at runtime (see the Webpack config). Assets should be placed in `/src/game/assets`, `import`ed into a module and loaded via the `src/kit/helpers/loading.js` helper or using Phaser's own `game.load.*` methods. (See the skeleton's `title` state for an example of this usage.)
+ * The build pipeline outputs two bundles: `vendor` for Phaser and its dependencies, and `index` for the game code.
+
 ## Linting
 
 ESLint is used to provide IDE warnings as appropriate, though no hooks are currently present to prevent lint errors from being committed and pushed.

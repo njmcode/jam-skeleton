@@ -30,7 +30,7 @@ const baseConfig = {
       },
       // Assets handled as file paths for import
       {
-        test: /\.(jpg|png|gif)$/,
+        test: /\.(jpg|png|gif|jpeg|mp3|mp4|ogg|wav)$/,
         use: [{
           loader: 'file-loader',
           options: {
