@@ -15,7 +15,9 @@ A (currently Phaser-based) skeleton project for game jam entries.
 
 ## Quickstart
 
- 1. Clone the repo
+Ensure you have Node and npm installed.
+
+ 1. Clone/download the repo (delete the `.git` directory if present)
  2. Run `npm install`
  3. Run `npm start`
  4. Visit `localhost` on port 8080
