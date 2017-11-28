@@ -6,6 +6,7 @@ A (currently Phaser-based) skeleton project for game jam entries. WIP.
 
  - [ ] `PlayerPawn` class + auto-bind controls
  - [ ] Gamepad & touch helpers
+ - [ ] Websocket client/server infrastructure for multiplayer games (might be best as a separate skeleton?)
 
 ## Overview
 
