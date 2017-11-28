@@ -27,15 +27,35 @@ A (currently Phaser-based) skeleton project for game jam entries.
  * `start` - runs the Webpack dev server, builds the app, serves it on localhost while watching for changes and live-reloading as needed.
  * `build` - performs a production build (minified etc) to the `/dist` directory.
 
+## Skeleton features
+
+ * **Basic states created** - `startup`, `title` and `play` states are already in place and wired up.
+ * **Easier game object handling** - includes helper methods and factories to more easily add game objects to the state, with suitable defaults (e.g. centred anchor position).
+ * **Asset preloading tools** - contains a helper method to load a manifest of assets, and a basic UI text component to report progress.
+ * **Jump to state via URL hash** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined. _Note: this only works on initial page load; there is no HTML5 History integration and the state will not respond to hash changes once the page has loaded._
+ * **HTML page shell** - barebones styled HTML and CSS shell, with Canvas placeholder text and centred layout.
+
 ## Developing with the skeleton
 
+### Structure
+
  * All game-related code lives in the `/src/game` directory.
- * `/src/game/index.js` is the Webpack entrypoint of the app (it should not require editing).
  * `/src/game/states/startup.js:preload()` is the first code executed after the game instance has been created.
- * `Phaser` must be `import`ed before use in a module e.g. `import Phaser from 'phaser'`
  * `/src/kit` contains helpers and UI components to assist in development; check the source for details.
- * `import`ing a media file (image, video, audio) will get the URL from which that file is served at runtime (see the Webpack config). Assets should be placed in `/src/game/assets`, `import`ed into a module and loaded via the `src/kit/helpers/loading.js` helper or using Phaser's own `game.load.*` methods. (See the skeleton's `title` state for an example of this usage.)
+
+### Modules and building
+
+ * `/src/game/index.js` is the Webpack entrypoint of the app (it should not require editing).
+ * `Phaser` must be `import`ed before use in a module e.g. `import Phaser from 'phaser'`.
+ * Imports will be resolved to the `/src/game` directory automatically, so you can import from `helpers/`, `states/` etc without having to specify the full path.
+ * Imports will also resolve to the `/src` directory, so you can access skeleton helpers by importing from `kit/*` without having to specify the full path.
  * The build pipeline outputs two bundles: `vendor` for Phaser and its dependencies, and `index` for the game code.
+
+### Assets
+
+ * `import`ing a media file (image, video, audio) will get the URL from which that file is served at runtime (see the Webpack config).
+ * Assets should be placed in `/src/game/assets`, `import`ed into a module and loaded via the `src/kit/helpers/loading.js` helper or using Phaser's own `game.load.*` methods. (See the skeleton's `title` state for an example of this usage.)
+
 
 ## Linting
 
@@ -47,15 +67,9 @@ Lint rules are StandardJS and ESLint recommended, combined, with the following a
  * Require dangling comma for multiline declarations (will make adding/removing items from a collection easier)
  * No semicolons (cleaner code and less typing)
 
-## Skeleton features
-
- * **Basic states created** - `startup`, `title` and `play` states are already in place and wired up.
- * **Easier game object handling** - includes helper methods and factories to more easily add game objects to the state, with suitable defaults (e.g. centred anchor position).
- * **Asset preloading tools** - contains a helper method to load a manifest of assets, and a basic UI text component to report progress.
- * **Jump to state via URL hash** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined. _Note: this only works on initial page load; there is no HTML5 History integration and the state will not respond to hash changes once the page has loaded._
- * **HTML page shell** - barebones styled HTML and CSS shell, with Canvas placeholder text and centred layout.
-
 ## njmcode's Notes On Game Jamming
+
+See also https://njmcode.github.io/blog/2017/04/02/lessons-learned-gamecraft-2017.html
 
 ### Order of events
 
