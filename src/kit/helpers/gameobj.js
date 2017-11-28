@@ -5,7 +5,7 @@ import Phaser from 'phaser'
  *
  * @author njmcode
  * @function getGame
- * @param {Phaser.State|Phaser.GameObject} inst - Current game/state instance.
+ * @param {Phaser.State|Phaser.Game} inst - Current game/state instance.
  * @returns {Phaser.Game} The current game instance.
  */
 export function getGame (inst) {
