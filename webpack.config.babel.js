@@ -1,4 +1,3 @@
-import webpack from 'webpack'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
@@ -22,7 +21,7 @@ const baseConfig = {
         include: SRC_PATH,
         exclude: [
           /node_modules/,
-          path.join(SRC_PATH, 'lib')
+          path.join(SRC_PATH, 'lib'),
         ],
         use: [{
           loader: 'babel-loader',
@@ -68,7 +67,7 @@ const baseConfig = {
       chunksSortMode: 'manual',
       template: path.join(SRC_PATH, 'shell', 'index.html'),
       filename: 'index.html',
-    })
+    }),
   ],
   resolve: {
     modules: [

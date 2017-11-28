@@ -16,7 +16,7 @@ import Phaser from 'phaser'
  * @returns {ClickableText} This ClickableText instance.
  */
 class ClickableText extends Phaser.Button {
-  constructor (game, x, y, labelText, style = {} , onClickFn, ctx) {
+  constructor (game, x, y, labelText, style = {}, onClickFn, ctx) {
     super(game, x, y, null, onClickFn, ctx)
 
     this.text = new Phaser.Text(game, 0, 0, labelText, style)

@@ -27,7 +27,7 @@ export function getGame (inst) {
  * @function addTo
  * @param {Phaser.State|Phaser.Game} inst - Current game or state object.
  * @param {Phaser.GameObject} ObjClass - Class of object to create (e.g. Phaser.Sprite).
- * @param {mixed} args - Arguments to be passed to ObjClass constructor (e.g. game, x, y, etc).
+ * @param {mixed} args - Arguments to be passed to ObjClass constructor (e.g. x, y, id, etc).
  * @return {Phaser.GameObject} The created ObjClass instance.
  */
 export function addTo (inst, ObjClass, ...args) {

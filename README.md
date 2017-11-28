@@ -42,6 +42,7 @@ A (currently Phaser-based) skeleton project for game jam entries.
  * All game-related code lives in the `/src/game` directory.
  * `/src/game/states/startup.js:preload()` is the first code executed after the game instance has been created.
  * `/src/kit` contains helpers and UI components to assist in development; check the source for details.
+ * New states should be defined in `/src/game/states/<statename>.js` and added to the `index.js` file in that directory before use; it will automatically be registered when the game boots.
 
 ### Modules and building
 

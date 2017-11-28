@@ -13,9 +13,11 @@ import { getGame } from './gameobj'
  * e.g.:
  * {
  *  image: {
+ *    //= game.load.image('my-image', 'assets/myimage.png')
  *    'my-image': ['assets/myimage.png']
  *  },
  *  spritesheet: {
+ *    //= game.load.spritesheet('my-sprites', 'assets/ssheet.png', 64, 64)
  *    'my-sprites': ['assets/ssheet.png', 64, 64]
  *  },
  *  etc.
