@@ -1,6 +1,11 @@
 # jam-skeleton
 
-A (currently Phaser-based) skeleton project for game jam entries.
+A (currently Phaser-based) skeleton project for game jam entries. WIP.
+
+## Main TODOs
+
+ - [ ] `PlayerPawn` class + auto-bind controls
+ - [ ] Gamepad & touch helpers
 
 ## Overview
 
@@ -21,6 +26,7 @@ Ensure you have Node and npm installed.
  2. Run `npm install`
  3. Run `npm start`
  4. Visit `localhost` on port 8080
+ 5. Add/edit game logic in `/src/game`
 
 ## Build scripts
 
@@ -58,7 +64,6 @@ Ensure you have Node and npm installed.
 
  * `import`ing a media file (image, video, audio) will get the URL from which that file is served at runtime (see the Webpack config).
  * Assets should be placed in `/src/game/assets`, `import`ed into a module and loaded via the `src/kit/helpers/loading.js` helper or using Phaser's own `game.load.*` methods. (See the skeleton's `title` state for an example of this usage.)
-
 
 ## Linting
 
