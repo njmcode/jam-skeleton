@@ -2,6 +2,10 @@ import Phaser from 'phaser'
 import stateMap from 'states'
 
 class StartupState extends Phaser.State {
+  preload () {
+
+  }
+
   create () {
     /*
      * Boot logic goes here
