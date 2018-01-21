@@ -4,6 +4,7 @@ import STRINGS from 'config/strings'
 
 import { addTo } from 'kit/helpers/gameobj'
 import Placeholder from 'kit/actors/Placeholder'
+import ControlsHelper from 'kit/helpers/controls'
 
 class PlayState extends Phaser.State {
   preload () {
@@ -40,10 +41,25 @@ class PlayState extends Phaser.State {
       0xffccdd,
       'ship'
     )
+    this.physics.enable(this.actor3, Phaser.Physics.ARCADE)
+    this.actor3.speed = 0
+    this.actor3.body.drag.set(0.3)
+    this.actor3.body.maxVelocity.set(200)
+    this.actor3.body.collideWorldBounds = true
   }
 
   update () {
-
+    if (ControlsHelper.isPressed('up')) {
+      this.physics.arcade.velocityFromRotation(this.actor3.rotation, 200, this.actor3.body.velocity)
+    } else {
+      this.actor3.body.velocity.set(0)
+    }
+    if (ControlsHelper.isPressed('left')) {
+      this.actor3.angle -= 4
+    }
+    if (ControlsHelper.isPressed('right')) {
+      this.actor3.angle += 4
+    }
   }
 }
 

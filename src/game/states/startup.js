@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import stateMap from 'states'
+import ControlsHelper from 'kit/helpers/controls'
 
 class StartupState extends Phaser.State {
   preload () {
@@ -10,7 +11,7 @@ class StartupState extends Phaser.State {
     /*
      * Boot logic goes here
      */
-
+    ControlsHelper.init(this)
     this.doNextState()
   }
 

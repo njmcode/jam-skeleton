@@ -10,14 +10,15 @@ export const PH_TRIANGLE = 'triangle'
  *
  * @author njmcode
  * @class Placeholder
- * @param {Phaser.Game} game - Current game or state object.
- * @param {number} x - x position of actor instance
- * @param {number} y - y position of actor instance
- * @param {string} shape - shape of placeholder (defaults to rectangle)
- * @param {number} width - width of actor instance (defaults to 100px)
- * @param {number} height - height of actor instance (defaults to width)
- * @param {string} color - color of placeholder (defaults to blue)
- * @param {string} label - label to show on placeholder (defaults to empty string)
+ * @extends Phaser.Sprite
+ * @param {Phaser.Game} game - Current game object.
+ * @param {number} x - X position of actor instance
+ * @param {number} y - Y position of actor instance
+ * @param {string} shape - Shape of placeholder (defaults to rectangle)
+ * @param {number} width - Width of actor instance (defaults to 100px)
+ * @param {number} height - Height of actor instance (defaults to width)
+ * @param {string} color - Color of placeholder (defaults to blue)
+ * @param {string} label - Label to show on placeholder (defaults to empty string)
  * @return {Phaser.GameObject} The created placeholder object.
  */
 class Placeholder extends Phaser.Sprite {
@@ -33,16 +34,19 @@ class Placeholder extends Phaser.Sprite {
       gfx.boundsPadding = 0
 
       gfx.beginFill(color)
+
+      // Need to draw these shapes with 90deg of rotation,
+      // as that is the default 0-angle for Phaser GameObjects
       switch (shape) {
         case PH_CIRCLE:
         case PH_ELLIPSE:
-          gfx.drawEllipse(width * 0.5, height * 0.5, width * 0.5, height * 0.5)
+          gfx.drawEllipse(height * 0.5, width * 0.5, height * 0.5, width * 0.5)
           break
         case PH_TRIANGLE:
           gfx.drawPolygon(
-            0, height,
-            width * 0.5, 0,
-            width, height)
+            0, 0,
+            height, width * 0.5,
+            0, width)
           break
         case PH_RECT:
         default:
