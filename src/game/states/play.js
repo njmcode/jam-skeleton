@@ -24,21 +24,21 @@ class PlayState extends Phaser.State {
       cx - 200, cy,
       'rect', 50, 100,
       0x00ff00,
-      '1'
+      'wall'
     )
 
     this.actor2 = addTo(this, Placeholder,
       cx + 100, cy,
       'circle', 100, 100,
       0x112233,
-      '2'
+      'planet'
     )
 
     this.actor3 = addTo(this, Placeholder,
       cx, cy + 20,
       'triangle', 60, 90,
       0xffccdd,
-      '3'
+      'ship'
     )
   }
 

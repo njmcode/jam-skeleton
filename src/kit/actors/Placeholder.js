@@ -56,15 +56,14 @@ class Placeholder extends Phaser.Sprite {
       this.loadTexture(imgKey)
       gfx.destroy()
 
-      const gfxRGB = Phaser.Color.getRGB(color)
-      const gfxGrayVal = ['r', 'g', 'b'].reduce((acc, k) => {
-        return acc + parseInt(gfxRGB[k])
-      }, 0) / 3
-
       this.placeholderLabel = new Phaser.Text(game, 0, 0, label, {
         font: '12px sans-serif',
-        fill: (gfxGrayVal < 80) ? 'white' : 'black',
+        fill: 'white',
+        stroke: 'black',
+        strokeThickness: 2,
         align: 'center',
+        wordWrap: true,
+        wordWrapWidth: width,
       })
       this.placeholderLabel.anchor.set(0.5)
       this.addChild(this.placeholderLabel)
