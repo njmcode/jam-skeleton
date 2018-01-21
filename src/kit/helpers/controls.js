@@ -43,6 +43,10 @@ function init (inst, inputType = CTRL_KEYS_ARROWS | CTRL_KEYS_WASD, customKeys =
     _engine.values[k] = 0
   }
 
+  if (!_engine.inputType) {
+    console.warn('ControlsHelper: initialized with no specified inpuType')
+  }
+
   // Create and bind keys
   if (_engine.inputType & CTRL_KEYS_ARROWS) {
     _engine.arrows = _engine.game.input.keyboard.createCursorKeys()
@@ -61,7 +65,6 @@ function init (inst, inputType = CTRL_KEYS_ARROWS | CTRL_KEYS_WASD, customKeys =
       _engine.keys[k] = _engine.game.input.keyboard.addKey(_engine.bindings[k])
     }
   }
-  console.log('Controls._engine', _engine)
 
   // TODO: add additional actions
 

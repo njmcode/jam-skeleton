@@ -61,6 +61,10 @@ class PlayState extends Phaser.State {
       this.actor3.angle += 4
     }
   }
+
+  render () {
+    this.game.debug.inputInfo(10, 20)
+  }
 }
 
 export default PlayState
