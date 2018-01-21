@@ -4,9 +4,7 @@ A (currently Phaser-based) skeleton project for game jam entries. WIP.
 
 ## Main TODOs
 
- - [ ] `PlayerPawn` class + auto-bind controls
- - [ ] Gamepad & touch helpers
- - [ ] Websocket client/server infrastructure for multiplayer games (might be best as a separate skeleton?)
+ - [ ] Basic websocket message relay for easy multiplayer/multi-device prototyping
 
 ## Overview
 
@@ -40,7 +38,7 @@ Ensure you have Node and npm installed.
 
  * **Basic states created** - `startup`, `title` and `play` states are already in place and wired up.
  * **Easier game object handling** - includes helper methods and factories to more easily add game objects to the state, with suitable defaults (e.g. centred anchor position).
- * **Prototyping helpers** - placeholder actor class and other quick-start helper modules for easier idea prototyping.
+ * **Prototyping helpers** - placeholder actors, auto-controls, and other quick-start helper modules for easier idea prototyping.
  * **Asset preloading tools** - contains a helper method to load a manifest of assets, and a basic UI text component to report progress.
  * **Jump to state via URL hash** - a state defined in `game/states/index.js` can be jumped to by passing its name in the URL hash e.g. `localhost:8080/#play` will jump to the `play` state, if defined. _Note: this only works on initial page load; there is no HTML5 History integration and the state will not respond to hash changes once the page has loaded._
  * **HTML page shell** - barebones styled HTML and CSS shell, with Canvas placeholder text and centred layout.
