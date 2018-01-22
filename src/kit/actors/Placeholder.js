@@ -50,7 +50,7 @@ class Placeholder extends Phaser.Sprite {
           break
         case PH_RECT:
         default:
-          gfx.drawRect(0, 0, width, height)
+          gfx.drawRect(0, 0, height, width)
           break
       }
       gfx.endFill()
@@ -70,6 +70,7 @@ class Placeholder extends Phaser.Sprite {
         wordWrapWidth: width,
       })
       this.placeholderLabel.anchor.set(0.5)
+      this.placeholderLabel.angle = 20
       this.addChild(this.placeholderLabel)
     }
   }
