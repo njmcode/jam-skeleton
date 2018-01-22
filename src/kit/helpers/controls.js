@@ -1,6 +1,19 @@
 import Phaser from 'phaser'
 import { getGame } from 'kit/helpers/gameobj'
 
+/**
+ * Helper module for quickly handling multiple input types
+ * when prototyping/jamming. Auto-binds WASD and arrow keys for
+ * movement, and provides checker methods that will return true
+ * if _any_ of the bound controls are in use.
+ * (i.e. 'up' will be returned `true` if either W *or* the up arrow
+ * are being pressed).
+ *
+ * TODO: add gamepad support
+ * TODO: elegant/friendlier multiplayer support
+ * TODO: convert to class/other structure?
+ */
+
 export const CTRL_KEYS_ARROWS = 1
 export const CTRL_KEYS_WASD = 2
 export const CTRL_GAMEPAD = 4 // TODO: not implemented
@@ -32,6 +45,13 @@ function init (inst, inputType = CTRL_KEYS_ARROWS | CTRL_KEYS_WASD, customKeys =
   _engine.game = getGame(inst)
   _engine.inputType = inputType
 
+  if (!_engine.inputType) {
+    console.warn('ControlsHelper: initialized with no specified inputType')
+  }
+  if (_engine.inputType & CTRL_GAMEPAD) {
+    console.warn('ControlsHelper: gamepad not yet supported by this helper')
+  }
+
   // Init control values object
   _engine.bindings = {
     ...KEY_BINDS_WASD,
@@ -41,10 +61,6 @@ function init (inst, inputType = CTRL_KEYS_ARROWS | CTRL_KEYS_WASD, customKeys =
   _engine.values = {}
   for (let k in _engine.bindings) {
     _engine.values[k] = 0
-  }
-
-  if (!_engine.inputType) {
-    console.warn('ControlsHelper: initialized with no specified inpuType')
   }
 
   // Create and bind keys
@@ -66,9 +82,7 @@ function init (inst, inputType = CTRL_KEYS_ARROWS | CTRL_KEYS_WASD, customKeys =
     }
   }
 
-  // TODO: add additional actions
-
-  // TODO: bind gamepad
+  // TODO: handle gamepad
 }
 
 function _getKeyValue (k) {
