@@ -17,7 +17,7 @@ export const PH_TRIANGLE = 'triangle'
  * @param {string} shape - Shape of placeholder (defaults to rectangle)
  * @param {number} width - Width of actor instance (defaults to 100px)
  * @param {number} height - Height of actor instance (defaults to width)
- * @param {string} color - Color of placeholder (defaults to blue)
+ * @param {number} color - Color of placeholder (defaults to blue)
  * @param {string} label - Label to show on placeholder (defaults to empty string)
  * @return {Phaser.GameObject} The created placeholder object.
  */
