@@ -69,11 +69,11 @@ Ensure you have Node and npm installed.
 
 ESLint is used to provide IDE warnings as appropriate, though no hooks are currently present to prevent lint errors from being committed and pushed.
 
-Lint rules are StandardJS and ESLint recommended, combined, with the following additions:
+Lint rules are StandardJS and ESLint recommended, combined, with the following warnings added:
 
- * No `console` statements (will keep output clean over time and help debugging)
- * Require dangling comma for multiline declarations (will make adding/removing items from a collection easier)
- * No semicolons (cleaner code and less typing)
+ * Warn for `console` statements apart from `info`, `warn` and `error` (will keep output clean over time, and help debugging)
+ * Warn for semicolons (can be used if you really want to)
+ * Warn for missing trailing commas in multiline declarations
 
 ## njmcode's Notes On Game Jamming
 
