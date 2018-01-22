@@ -65,7 +65,7 @@ const baseConfig = {
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'index'],
       chunksSortMode: 'manual',
-      template: path.join(SRC_PATH, 'shell', 'index.html'),
+      template: path.join(SRC_PATH, 'game', 'shell', 'index.html'),
       filename: 'index.html',
     }),
   ],
